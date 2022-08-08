@@ -1,4 +1,4 @@
-name: LuppiLandia-MacOS
+name: MacOS
 on: 
   workflow_dispatch:
 defaults:
@@ -16,8 +16,8 @@ jobs:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
         MAC_USER_PASSWORD: ${{ secrets.MAC_USER_PASSWORD }}
         VNC_PASSWORD: ${{ secrets.VNC_PASSWORD }}
-        MAC_REALNAME: ${{ secrets.MAC_REALNAME }}
-      run: source macos.sh "$MAC_USER_PASSWORD" "$VNC_PASSWORD" "$NGROK_AUTH_TOKEN" "$MAC_REALNAME"
+        MAC_USER_NAME: ${{ secrets.MAC_USER_NAME }}
+      run: source macos.sh "$MAC_USER_NAME" "$MAC_USER_PASSWORD" "$VNC_PASSWORD" "$NGROK_AUTH_TOKEN"
     - name: Connecting MacOS with Ngrok to VNC Server
       run: source IP.sh
     - name: MacOS System running...
