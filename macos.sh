@@ -14,7 +14,7 @@ sudo dscl . -create /Users/$MAC_USER_NAME UserShell /bin/bash
 sudo dscl . -create /Users/$MAC_USER_NAME RealName "Real Whatever"
 sudo dscl . -create /Users/$MAC_USER_NAME UniqueID 1001
 sudo dscl . -create /Users/$MAC_USER_NAME PrimaryGroupID 80
-sudo dscl . -create /Users/$MAC_USER_NAME NFSHomeDirectory /Users/tcv
+sudo dscl . -create /Users/$MAC_USER_NAME NFSHomeDirectory /Users/$MAC_USER_NAME
 sudo dscl . -passwd /Users/$MAC_USER_NAME $MAC_USER_PASSWORD
 sudo dscl . -passwd /Users/$MAC_USER_NAME $MAC_USER_PASSWORD
 sudo createhomedir -c -u $MAC_USER_NAME > /dev/null
